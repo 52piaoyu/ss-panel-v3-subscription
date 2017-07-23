@@ -44,30 +44,29 @@
 
     $array = array("$server_jp_url","\r\n","$server_hk_url","\r\n","$server_sg_url");
 
-注：`"\r\n"`是为ssr://链接换行，只需在倒数第二个服务器变量名后添加，如果这一步配置错误，会导致无法生成链接表现为空白页，或500、503错误
+注：`"\r\n"`是为ssr://链接换行，只需在倒数第二个服务器变量名后添加，如果这一步配置错误，会导致无法生成链接，网页表现为空白页，或提示500、503错误
 
-7.配置完成，访问api.php，假如 ss panel v3 前端地址为`ssr.domain.com`，我们访问订阅地址<br>
-`ssr.domain.com/api.php?user=用户名&passwd=密码`<br>
-当以上配置正确时，您可看到一串长链接，当账号密码错误时，您可看到错误提示：登录失败，用户名或密码不正确。<br>
+7.配置完成，访问api.php，假如 ss panel v3 前端地址为`https://ssr.domain.com`，我们访问订阅地址<br>
+`https://ssr.domain.com/api.php?user=用户名&passwd=密码`<br>
+当以上配置正确时，您可看到一串长链接，当账号密码错误时，您可看到错误提示：`登录失败，用户名或密码不正确。`<br>
 
 Windows平台订阅
 ---
-右键小飞机，服务器订阅，SSR服务器订阅设置，在网址栏输入订阅地址（参加第7步），确定，右键小飞机，服务器订阅，更新SSR服务器订阅<br>
-注：当“更新SSR服务器订阅”提示失败时，可尝试“更新SSR服务器订阅（不通过代理）”<br>
+右键小飞机，服务器订阅，SSR服务器订阅设置，在网址栏输入订阅地址（参加第7步），确定，右键小飞机，服务器订阅，更新SSR服务器订阅。当“更新SSR服务器订阅”提示失败时，可尝试“更新SSR服务器订阅（不通过代理）”<br>
 
-mac osx
+Mac OSx
 ---
 等待添加...
 
-ios平台订阅
+IOS平台订阅
 ---
-打开Shadowsocket，点击右上方的+号，类型选择Subscribe，url输入订阅地址，备注自定义即可，点完成，Shadowsocket会自动获取配置
-可在“设置-其他-服务器订阅”中启用更多选项
+打开Shadowsocket，点击右上方的+号，类型选择Subscribe，url输入订阅地址，备注自定义即可，点完成，Shadowsocket会自动获取配置<br>
+可在“设置-其他-服务器订阅”中启用更多选项<br>
 
 Android平台订阅
 ---
-点击ShadowSocksR，点击右下角的+，添加/升级 SSR订阅，自动更新开关随意，点添加订阅地址，输入订阅地址，确认，确定并升级
+点击ShadowSocksR，点击右下角的+，添加/升级 SSR订阅，自动更新开关随意，点添加订阅地址，输入订阅地址，确认，确定并升级，订阅成功。
 
-感谢
+致谢
 ---
-感谢 [@ysc3839](https://github.com/ysc3839) 在 [windows下ssr4.6.1 蜜汁订阅问题](https://github.com/shadowsocksr/shadowsocksr-csharp/issues/279#issuecomment-317194631) 指出Windows下订阅失败的问题所在（需要 urlsafe base64）
+感谢 [@ysc3839](https://github.com/ysc3839) 在 [windows下ssr4.6.1 蜜汁订阅问题](https://github.com/shadowsocksr/shadowsocksr-csharp/issues/279#issuecomment-317194631) 中指出Windows下订阅失败的问题所在（需要 urlsafe base64）
