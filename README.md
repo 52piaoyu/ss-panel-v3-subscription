@@ -30,7 +30,7 @@
     $server_hk = '4';
     $server_sg = '5';
     
-5.配置每台服务器的生成链接
+5.配置每台服务器的生成链接<br>
 注:只需修改下方的变量名：`$server_jp_url`为你在第4步为服务器命的名，然后在最后加上`_url`，以便区分，多台服务器添加多行
 
     $server_jp_url = get_ssr_url("$server_jp","$username","$db_host","$db_user","$db_pw","$db_name","$group_name","$group_name_base64","$after_obfs","$after_server_name","$after_group","$after_ssr_url");
@@ -46,15 +46,14 @@
 
 注：`"\r\n"`是为ssr://链接换行,只需在倒数第二个服务器变量名后添加，如果这一步配置错误，会导致无法生成链接表现为空白页，或500、503错误
 
-7.配置完成，访问api.php，假如 ss panel v3 前端地址为`ssr.domain.com`，我们访问订阅地址
-`ssr.domain.com/api.php?user=用户名&passwd=密码`
-当以上配置正确时，您可看到一串长链接，当账号密码错误时，您可看到错误提示：登录失败，用户名或密码不正确。
+7.配置完成，访问api.php，假如 ss panel v3 前端地址为`ssr.domain.com`，我们访问订阅地址<br>
+`ssr.domain.com/api.php?user=用户名&passwd=密码`<br>
+当以上配置正确时，您可看到一串长链接，当账号密码错误时，您可看到错误提示：登录失败，用户名或密码不正确。<br>
 
 Windows平台订阅
 ---
-右键小飞机，服务器订阅，SSR服务器订阅设置，在网址栏输入订阅地址（参加第7步），确定
-右键小飞机，服务器订阅，更新SSR服务器订阅
-注：当“更新SSR服务器订阅”提示失败时，可尝试“更新SSR服务器订阅（不通过代理）”
+右键小飞机，服务器订阅，SSR服务器订阅设置，在网址栏输入订阅地址（参加第7步），确定，右键小飞机，服务器订阅，更新SSR服务器订阅<br>
+注：当“更新SSR服务器订阅”提示失败时，可尝试“更新SSR服务器订阅（不通过代理）”<br>
 
 mac osx
 ---
