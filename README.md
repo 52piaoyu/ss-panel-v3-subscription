@@ -24,7 +24,7 @@
    
   4.为所有服务器命名，并填写所有服务器的ID<br>
   推荐命名规则：server_服务器所在国家地区简拼_该地区服务器编号<br>
-  例：server_jp_1，名称不能重复，服务器id不能填错，多台服务器添加多行<br>
+  例：`server_jp_1`，名称不能重复，服务器id不能填错，多台服务器添加多行<br>
   
     $server_jp = '3';
     $server_hk = '4';
@@ -35,8 +35,8 @@
 
     $server_jp_url = get_ssr_url("$server_jp","$username","$db_host","$db_user","$db_pw","$db_name","$group_name","$group_name_base64","$after_obfs","$after_server_name","$after_group","$after_ssr_url");
 
-6.最后一步，在下方添加你在第5步中修改后的变量名，第5步的例子中是`$server_jp_url`，因此下方用`$server_jp_url`演示
-当服务器只有一台时
+6.最后一步，在下方添加你在第5步中修改后的变量名，第5步的例子中是`$server_jp_url`，因此下方用`$server_jp_url`演示<br>
+当服务器只有一台时<br>
 
     $array = array("$server_jp_url");
 
@@ -44,7 +44,7 @@
 
     $array = array("$server_jp_url","\r\n","$server_hk_url","\r\n","$server_sg_url");
 
-注：`"\r\n"`是为ssr://链接换行,只需在倒数第二个服务器变量名后添加，如果这一步配置错误，会导致无法生成链接表现为空白页，或500、503错误
+注：`"\r\n"`是为ssr://链接换行，只需在倒数第二个服务器变量名后添加，如果这一步配置错误，会导致无法生成链接表现为空白页，或500、503错误
 
 7.配置完成，访问api.php，假如 ss panel v3 前端地址为`ssr.domain.com`，我们访问订阅地址<br>
 `ssr.domain.com/api.php?user=用户名&passwd=密码`<br>
