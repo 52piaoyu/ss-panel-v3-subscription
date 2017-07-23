@@ -1,6 +1,6 @@
 说明
 ---
-<br>为每一位ss-panel-v3用户提供一个专属订阅地址
+为每一位ss-panel-v3用户提供一个专属订阅地址<br>
 
 简介
 ---
@@ -9,7 +9,7 @@
 使用方法
 ---
 
-首先，您需将api.php通过git，xftp5或其他途径，放置在ss panel v3 的 /home/wwwroot/default/public 目录下
+首先，您需将api.php通过git，xftp5或其他途径，放置在 ss panel v3 的 /home/wwwroot/default/public 目录下
 
 1.填写 ss panel v3 登录地址，例：https://ssr.domain.com/auth/login
 
@@ -22,14 +22,14 @@
 
     $group_name = '';//Group名称
    
-  4.为所有服务器命名，并填写所有服务器的ID
-  推荐命名规则：server_服务器所在国家地区简拼_该地区服务器编号
-  例：server_jp_1，名称不能重复，服务器id不能填错，多台服务器添加多行
+  4.为所有服务器命名，并填写所有服务器的ID<br>
+  推荐命名规则：server_服务器所在国家地区简拼_该地区服务器编号<br>
+  例：server_jp_1，名称不能重复，服务器id不能填错，多台服务器添加多行<br>
   
-
     $server_jp = '3';
     $server_hk = '4';
     $server_sg = '5';
+    
 5.配置每台服务器的生成链接
 注:只需修改下方的变量名：`$server_jp_url`为你在第4步为服务器命的名，然后在最后加上`_url`，以便区分，多台服务器添加多行
 
