@@ -6,10 +6,14 @@
 ---
 <br>订阅地址的初衷可能是为多人提供快捷的添加方式，同时能够保持有效、快捷的更新。但对于ss panel v3用户来说，只需获取自己的配置即可，而当每次新加服务器或删除服务器时，或当用户在用户中心修改了自己的连接密码、协议、加密、混淆后，为能够使用变更过的配置，仍需手动通过导入配置文件，或通过剪切板添加、扫描二维码添加、手动更新，并不算方便。本项目通过php实现针对ss panel v3个人用户订阅地址的更新，支持Windows，mac osx，ios，Android四大平台。<br>
 
+更新日志
+---
+2017.07.25 修复api能够跨用户等级订阅服务器的问题，虽然订阅了也连接不了，嘿嘿。现在用户通过api订阅，只能订阅到自己等级范围内的服务器。
+
 使用方法
 ---
 
-首先，您需将api.php通过git，xftp5或其他途径，放置在 ss panel v3 的 /home/wwwroot/default/public 目录下
+首先，您需将api.php通过git，xftp5或其他途径，放置在 ss panel v3 的 `/home/wwwroot/default/public` 目录下
 
 1.填写 ss panel v3 登录地址，例：https://ssr.domain.com/auth/login
 
@@ -18,6 +22,7 @@
 2.填写 ss panel v3 数据库信息
 
     $db_host = 'localhost';$db_user = 'root';$db_pw = 'root';$db_name = 'sspanel';
+
 3.填写 Group 名称
 
     $group_name = '';//Group名称
@@ -33,42 +38,42 @@
 5.配置每台服务器的生成链接<br>
 注：需修改下方的变量名：`server_jp_url`为你在第4步为服务器命的名，然后加上`_url`，以便区分<br>
 例：服务器名是`server_usa`，则将`server_usa`加上`_url`，变成`server_usa_url`，替换掉下方的`server_jp_url`<br>
-然后将下方的`server_jp`替换为服务器名，即替换为`server_usa`<br>
+然后将下方括号内的`server_jp`替换为服务器名，即替换为`server_usa`<br>
 多台服务器添加多行，注意按照上述步骤修改
 
     $server_jp_url = get_ssr_url("$server_jp","$username","$db_host","$db_user","$db_pw","$db_name","$group_name","$group_name_base64","$after_obfs","$after_server_name","$after_group","$after_ssr_url");
 
-6.最后一步，在下方添加你在第5步中修改后的变量名，第5步的例子中是`$server_jp_url`，因此下方用`$server_jp_url`演示<br>
+6.最后一步，在下方添加你在第5步中修改后的变量名，第5步的例子中是`server_usa_url`，因此下方用`server_usa_url`演示<br>
 当服务器只有一台时<br>
 
-    $array = array("$server_jp_url");
+    $array = array("$server_usa_url");
 
-当有多台服务器`server_jp_url`，`server_hk_url`，`server_sg_url`时，应按照如下配置
+当有多台服务器`server_usa_url`，`server_hk_url`，`server_sg_url`时，应按照如下配置
 
-    $array = array("$server_jp_url","\r\n","$server_hk_url","\r\n","$server_sg_url");
+    $array = array("$server_usa_url","\r\n","$server_hk_url","\r\n","$server_sg_url");
 
-注：`"\r\n"`是为ssr://链接换行，只需在倒数第二个服务器变量名后添加，如果这一步配置错误，会导致无法生成链接，网页表现为空白页，或提示500、503错误
+注：`"\r\n"`是为ssr://链接换行，只需在倒数第二个服务器变量名后添加
 
-7.配置完成，访问api.php，假如 ss panel v3 前端地址为`https://ssr.domain.com`，我们访问订阅地址<br>
+7.配置完成，假如 ss panel v3 前端地址为`https://ssr.domain.com`，我们访问订阅地址<br>
 `https://ssr.domain.com/api.php?user=用户名&passwd=密码`<br>
-当以上配置正确时，您可看到一串长链接，当账号密码错误时，您可看到错误提示：`登录失败，用户名或密码不正确。`<br>
+当所有配置正确时，您可看到一串长链接，当账号密码错误时，您可看到错误提示：`登录失败，用户名或密码不正确。`<br>
 
 Windows平台订阅
 ---
 右键小飞机，服务器订阅，SSR服务器订阅设置，在网址栏输入订阅地址（参加第7步），确定，右键小飞机，服务器订阅，更新SSR服务器订阅。当“更新SSR服务器订阅”提示失败时，可尝试“更新SSR服务器订阅（不通过代理）”<br>
 
-Mac OSx
+Android平台订阅
 ---
-等待添加...
+点击ShadowSocksR，点击右下角的+，添加/升级 SSR订阅，自动更新开关随意，点添加订阅地址，输入订阅地址，确认，确定并升级，订阅成功。
 
 IOS平台订阅
 ---
 打开Shadowsocket，点击右上方的+号，类型选择Subscribe，url输入订阅地址，备注自定义即可，点完成，Shadowsocket会自动获取配置<br>
 可在“设置-其他-服务器订阅”中启用更多选项<br>
 
-Android平台订阅
+Mac OSx
 ---
-点击ShadowSocksR，点击右下角的+，添加/升级 SSR订阅，自动更新开关随意，点添加订阅地址，输入订阅地址，确认，确定并升级，订阅成功。
+等待添加...
 
 致谢
 ---
