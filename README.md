@@ -22,7 +22,7 @@
 
     $group_name = '';//Group名称
    
-  4.为所有服务器命名，并填写所有服务器的ID<br>
+  4.为所有服务器命名，并填写所有服务器的ID，服务器ID可在“管理面板-节点列表”中找到<br>
   推荐命名规则：server_服务器所在国家地区简拼_该地区服务器编号<br>
   例：`server_jp_1`，名称不能重复，服务器id不能填错，多台服务器添加多行<br>
   
@@ -40,7 +40,7 @@
 
     $array = array("$server_jp_url");
 
-当有多台服务器时，应按照如下配置
+当有多台服务器`server_jp_url`，`server_hk_url`，`server_sg_url`时，应按照如下配置
 
     $array = array("$server_jp_url","\r\n","$server_hk_url","\r\n","$server_sg_url");
 
