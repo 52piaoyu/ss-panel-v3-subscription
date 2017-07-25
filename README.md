@@ -31,7 +31,10 @@
     $server_sg = '5';
     
 5.配置每台服务器的生成链接<br>
-注:只需修改下方的变量名：`$server_jp_url`为你在第4步为服务器命的名，然后在最后加上`_url`，以便区分，多台服务器添加多行
+注：需修改下方的变量名：`server_jp_url`为你在第4步为服务器命的名，然后加上`_url`，以便区分<br>
+例：服务器名是`server_usa`，则将`server_usa`加上`_url`，变成`server_usa_url`，替换掉下方的`server_jp_url`<br>
+然后将下方的`server_jp`替换为服务器名，即替换为`server_usa`<br>
+多台服务器添加多行，注意按照上述步骤修改
 
     $server_jp_url = get_ssr_url("$server_jp","$username","$db_host","$db_user","$db_pw","$db_name","$group_name","$group_name_base64","$after_obfs","$after_server_name","$after_group","$after_ssr_url");
 
